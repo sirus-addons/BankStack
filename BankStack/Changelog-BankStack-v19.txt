@@ -1,0 +1,17 @@
+tag v19
+f289c7a15e0ff5bb4355daf07d3b539b886aa67f
+David Lynch <kemayo@gmail.com>
+2010-10-05 06:28:56 +0000
+
+Input check
+
+
+--------------------
+
+David Lynch:
+	- Input check
+	- Automatic sorting on bank access / afk.
+	- Handle multiple arguments to /sort and /compress
+	- Another out of date pattern
+	- Make "bank" automatically fall back on the currently viewed guild bank tab if you're at the guild bank.
+	- Fix sorting of guild bank tabs that are not the currently open tab.
