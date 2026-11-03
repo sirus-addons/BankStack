@@ -67,7 +67,7 @@ function core.Fill(source_bags, target_bags)
 			and
 			bag_ids[bagslot]
 			and
-			core.CanItemGoInBag(bag_ids[bagslot], target_bag)
+			core.CanItemGoInBag(bag_ids[bagslot], target_bag, bag, slot)
 		then
 			core.AddMove(bagslot, table.remove(empty_slots, 1))
 		end

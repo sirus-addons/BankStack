@@ -154,6 +154,7 @@ local help_options = {
 			name = "/bankstack -- this menu.\n"..
 				"/sort -- rearrange your bags\n"..
 				"/sort bank -- rearrange your bank\n"..
+				"/sort reagent -- rearrange your reagent bank\n"..
 				"/stack -- fills stacks in your bank from your bags\n"..
 				"/stack bank bags -- fills stacks in your bags from your bank\n"..
 				"/compress -- merges stacks in your bags\n"..
@@ -208,6 +209,7 @@ local launcher_options = {
 		
 		sortbags = {name = "Sort Bags", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 10,},
 		sortbank = {name = "Sort Bank", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 20,},
+		sortreagent = {name = "Sort Reagent Bank", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 25,},
 		stackbank = {name = "Stack to Bank", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 30,},
 		stackbags = {name = "Stack to Bags", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 40,},
 		compressbags = {name = "Compress Bags", desc = "Modified left-clicks only", type = "select", values = keybindings, order = 50,},

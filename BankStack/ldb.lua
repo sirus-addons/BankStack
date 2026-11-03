@@ -5,6 +5,7 @@ local icon = LibStub("LibDBIcon-1.0", true)
 local click_actions = {
 	sortbags = core.SortBags,
 	sortbank = function() core.SortBags('bank') end,
+	sortreagent = function() core.SortBags('reagent') end,
 	stackbags = function() core.BankStack('bank bags') end,
 	stackbank = core.BankStack,
 	compressbags = core.Compress,
@@ -13,13 +14,14 @@ local click_actions = {
 local name_map = {
 	sortbags = "Sort Bags",
 	sortbank = "Sort Bank",
+	sortreagent = "Sort Reagent Bank",
 	stackbags = "Stack from bank to bags",
 	stackbank = "Stack from bags to bank",
 	compressbags = "Compress stacks in bags",
 	compressbank = "Compress stacks in bank",
 }
 local binding_order = {
-	'sortbags', 'sortbank', 'stackbags', 'stackbank', 'compressbags', 'compressbank',
+	'sortbags', 'sortbank', 'sortreagent', 'stackbags', 'stackbank', 'compressbags', 'compressbank',
 	--'BUTTON1', 'ALT-BUTTON1', 'CTRL-BUTTON1', 'ALT-CTRL-BUTTON1', 'SHIFT-BUTTON1',
 	--'ALT-SHIFT-BUTTON1', 'CTRL-SHIFT-BUTTON1', 'ALT-CTRL-SHIFT-BUTTON1',
 }
