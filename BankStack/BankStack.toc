@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: BankStack
 ## Author: Kemayo
-## Notes: |@Version: 1@|From bags we came, to bank we return
+## Notes: |@Version: 2@|From bags we came, to bank we return
 ## Version: v19
 ## LoadOnDemand: 0
 ## OptionalDeps: Ace3, LibDBIcon-1.0, tekDebug
