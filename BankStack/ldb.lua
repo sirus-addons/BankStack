@@ -1,4 +1,5 @@
 local core = BankStack
+local L = core.L
 local module = core:NewModule("LDB")
 local icon = LibStub("LibDBIcon-1.0", true)
 
@@ -12,13 +13,13 @@ local click_actions = {
 	compressbank = function() core.Compress('bank') end,
 }
 local name_map = {
-	sortbags = "Sort Bags",
-	sortbank = "Sort Bank",
-	sortreagent = "Sort Reagent Bank",
-	stackbags = "Stack from bank to bags",
-	stackbank = "Stack from bags to bank",
-	compressbags = "Compress stacks in bags",
-	compressbank = "Compress stacks in bank",
+	sortbags = L["Sort Bags"],
+	sortbank = L["Sort Bank"],
+	sortreagent = L["Sort Reagent Bank"],
+	stackbags = L["Stack from bank to bags"],
+	stackbank = L["Stack from bags to bank"],
+	compressbags = L["Compress stacks in bags"],
+	compressbank = L["Compress stacks in bank"],
 }
 local binding_order = {
 	'sortbags', 'sortbank', 'sortreagent', 'stackbags', 'stackbank', 'compressbags', 'compressbank',
@@ -46,7 +47,7 @@ local function pretty_keybind(keybind)
 	return keybind and ((string.match(keybind, "ALT-") and "Alt-" or '') ..
 		(string.match(keybind, "CTRL-") and "Ctrl-" or '') ..
 		(string.match(keybind, "SHIFT-") and "Shift-" or '') ..
-		"Click") or 'None'
+		L["Click"]) or L["None"]
 end
 
 local ldb = LibStub:GetLibrary("LibDataBroker-1.1")
@@ -61,7 +62,7 @@ dataobject.OnClick = function(frame, button)
 		return InterfaceOptionsFrame_OpenToCategory(LibStub("AceConfigDialog-3.0").BlizOptions.BankStack.BankStack.frame)
 	end
 	if #(core.moves) > 0 then 
-		return core.StopStacking("BankStack: Aborted.")
+		return core.StopStacking(L.aborted)
 	end
 	--Build the keybind that triggered this.  There might be a better way to do this.
 	local keybind = build_current_keybind()
@@ -75,7 +76,7 @@ dataobject.OnTooltipShow = function(tooltip)
 	for _, action in ipairs(binding_order) do
 		tooltip:AddDoubleLine(pretty_keybind(get_binding_for_action(action)), name_map[action], 0, 1, 0, 1, 1, 1)
 	end
-	tooltip:AddDoubleLine("Click while stacking", "Abort", 1, 0, 0, 1, 0, 0)
+	tooltip:AddDoubleLine(L["Click while stacking"], L["Abort"], 1, 0, 0, 1, 0, 0)
 end
 
 
@@ -94,8 +95,8 @@ function module:OnInitialize()
 		core.options.plugins.ldb = {
 			minimap = {
 				type = "toggle",
-				name = "Show minimap icon",
-				desc = "Toggle showing or hiding the minimap icon.",
+				name = L["Show minimap icon"],
+				desc = L["Toggle showing or hiding the minimap icon."],
 				get = function() return not db.profile.minimap.hide end,
 				set = function(info, v)
 					local hide = not v

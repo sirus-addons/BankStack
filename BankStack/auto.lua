@@ -1,4 +1,5 @@
 local core = BankStack
+local L = core.L
 local module = core:NewModule("Auto", "AceEvent-3.0")
 local Debug = core.Debug
 
@@ -15,33 +16,33 @@ function module:OnInitialize()
 		core.options.plugins.auto = {
 			auto = {
 				type = "group",
-				name = "Auto",
+				name = L["Auto"],
 				inline = true,
 				get = function(info) return db.profile[info[#info]] end,
 				set = function(info, value) db.profile[info[#info]] = value end,
 				args = {
 					bank_opened = {
 						type = "select",
-						name = "Bank opened",
+						name = L["Bank opened"],
 						values = {
-							none = "Nothing",
-							sort_bags = "Sort Bags",
-							sort_bank = "Sort Bank",
-							sort_both = "Sort Bags and Bank",
-							stack_to_bank = "Stack to Bank",
-							stack_to_bags = "Stack to Bags",
-							compress_bags = "Compress Bags",
-							compress_bank = "Compress Bank",
-							compress_both = "Compress Bags and Bank",
+							none = L["Nothing"],
+							sort_bags = L["Sort Bags"],
+							sort_bank = L["Sort Bank"],
+							sort_both = L["Sort Bags and Bank"],
+							stack_to_bank = L["Stack to Bank"],
+							stack_to_bags = L["Stack to Bags"],
+							compress_bags = L["Compress Bags"],
+							compress_bank = L["Compress Bank"],
+							compress_both = L["Compress Bags and Bank"],
 						},
 					},
 					afk = {
 						type = "select",
-						name = "Going AFK",
+						name = L["Going AFK"],
 						values = {
-							none = "Nothing",
-							sort_bags = "Sort Bags",
-							compress_bags = "Compress Bags",
+							none = L["Nothing"],
+							sort_bags = L["Sort Bags"],
+							compress_bags = L["Compress Bags"],
 						},
 					},
 				},
